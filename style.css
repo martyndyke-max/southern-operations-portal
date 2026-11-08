@@ -1,0 +1,190 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Gill Sans","Gill Sans MT",Calibri,sans-serif;
+
+    background:
+    radial-gradient(
+      circle at top left,
+        #0E5A36,
+        #022D1E
+    );
+
+    color:white;
+
+    min-height:100vh;
+
+    padding:30px;
+}
+
+.header{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.header h1{
+    font-size:42px;
+    color:#B8DE7C;
+    text-align:center;
+
+    text-shadow:
+        0 0 10px rgba(140,198,62,.25);
+}
+.status{
+    color:#8CC63E;
+}
+
+.controls{
+    display:flex;
+    gap:12px;
+
+    margin-bottom:20px;
+}
+
+button{
+    background:#8CC63E;
+    color:black;
+
+    border:none;
+
+    border-radius:10px;
+
+    padding:12px 20px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.banner{
+    height:220px;
+
+    border-radius:20px;
+
+    margin-bottom:25px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(140,198,62,.15);
+}
+
+.banner img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.bannerPlaceholder{
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    color:#8CC63E;
+}
+
+.schedule-card{
+    background:rgba(255,255,255,.04);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(140,198,62,.15);
+
+    box-shadow:
+    0 0 30px rgba(140,198,62,.15);
+}
+
+.card-header{
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:20px;
+    background:rgba(0,0,0,.2);
+}
+
+.card-title{
+    font-size:20px;
+    font-weight:600;
+}
+
+.duty-counter{
+    color:#8CC63E;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    color:#A7D46F;
+    text-align:center;
+    padding:16px;
+}
+
+th{
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+td{
+    padding:16px;
+    text-align:center;
+    vertical-align:middle;
+    border-top:1px solid rgba(255,255,255,.15);
+}
+
+td[contenteditable="true"]{
+    cursor:text;
+}
+
+td[contenteditable="true"]:focus{
+    outline:none;
+    background:rgba(140,198,62,.15);
+    box-shadow:inset 0 0 0 2px #8CC63E;
+}
+
+tr:hover{
+    background:rgba(255,255,255,.03);
+}
+
+#overlay{
+    display:none;
+
+    position:absolute;
+
+    top:150px;
+    left:100px;
+
+    cursor:move;
+
+    z-index:99;
+}
+
+#overlay img{
+    max-width:250px;
+}
+
+footer{
+    text-align:center;
+    margin-top:20px;
+    opacity:.7;
+}
