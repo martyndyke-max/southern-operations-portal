@@ -103,6 +103,8 @@ saveBtn.addEventListener("click", async () => {
             }
         );
 
+        console.log("Firestore write complete");
+
         saveStatus.textContent =
         "Status: Saved";
 
