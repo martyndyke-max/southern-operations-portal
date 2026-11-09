@@ -62,6 +62,8 @@ document.getElementById("lastUpdatedTime");
 
 saveBtn.addEventListener("click", async () => {
 
+    console.log("Save button clicked");
+
     try{
 
         saveStatus.textContent =
