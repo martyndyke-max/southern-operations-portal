@@ -1,23 +1,26 @@
-import {
-    db,
-    doc,
-    getDoc,
-    setDoc
-} from "./firebase.js";
+window.onload = async function(){
 
+    try{
 
-console.log("Southern Operations Portal Loaded");
+        const rosterDoc =
+        await getDoc(
+            doc(db,"Schedule","roster")
+        );
 
-// Load saved schedule
-window.onload = function(){
+        if(rosterDoc.exists()){
 
-    const savedTable =
-    localStorage.getItem("scheduleTable");
+            document.getElementById(
+                "scheduleBody"
+            ).innerHTML =
+            rosterDoc.data().tableData;
 
-    if(savedTable){
+        }
 
-        document.getElementById("scheduleBody").innerHTML =
-        savedTable;
+    }
+
+    catch(error){
+
+        console.error(error);
 
     }
 
