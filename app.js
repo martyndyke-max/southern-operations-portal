@@ -1,3 +1,11 @@
+import {
+    db,
+    doc,
+    getDoc,
+    setDoc
+} from "./firebase.js";
+
+
 console.log("Southern Operations Portal Loaded");
 
 // Load saved schedule
@@ -42,3 +50,52 @@ function saveTable(){
     );
 
 }
+
+const saveBtn =
+document.getElementById("saveBtn");
+
+const saveStatus =
+document.getElementById("saveStatus");
+
+const lastUpdatedTime =
+document.getElementById("lastUpdatedTime");
+
+saveBtn.addEventListener("click", async () => {
+
+    try{
+
+        saveStatus.textContent =
+        "Status: Saving...";
+
+        await setDoc(
+            doc(db,"Schedule","roster"),
+            {
+                tableData:
+                document.getElementById(
+                    "scheduleBody"
+                ).innerHTML,
+
+                updated:
+                new Date().toLocaleString()
+            }
+        );
+
+        saveStatus.textContent =
+        "Status: Saved";
+
+        lastUpdatedTime.textContent =
+        "Last Updated: " +
+        new Date().toLocaleString();
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+        saveStatus.textContent =
+        "Status: Save Failed";
+
+    }
+
+});
