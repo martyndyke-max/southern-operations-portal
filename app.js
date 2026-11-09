@@ -13,13 +13,17 @@ console.log("Southern Operations Portal Loaded");
 window.onload = async function(){
 
     try{
-
+        
+console.log("Loading roster from Firebase...");
+        
         const rosterDoc =
         await getDoc(
             doc(db,"Schedule","roster")
         );
 
         if(rosterDoc.exists()){
+
+            console.log(rosterDoc.data());
 
             document.getElementById(
                 "scheduleBody"
