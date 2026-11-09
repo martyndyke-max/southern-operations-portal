@@ -69,6 +69,8 @@ saveBtn.addEventListener("click", async () => {
         saveStatus.textContent =
         "Status: Saving...";
 
+        console.log("Writing to Firestore...");
+        
         await setDoc(
             doc(db,"Schedule","roster"),
             {
