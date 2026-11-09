@@ -188,3 +188,41 @@ footer{
     margin-top:20px;
     opacity:.7;
 }
+
+tbody tr:nth-child(even){
+    background: rgba(255,255,255,.02);
+}
+
+tbody tr:hover{
+    background:rgba(140,198,62,.12);
+}
+
+.toolbar{
+    padding:20px 15px 5px;
+    text-align:right;
+}
+
+#saveBtn{
+    background:#8CC63E;
+    color:#022D1E;
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    font-family:"Gill Sans","Gill Sans MT",Calibri,sans-serif;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#saveBtn:hover{
+    background:#A7D46F;
+}
+
+#saveStatus,
+#lastUpdated,
+#lastUpdatedTime{
+    text-align:right;
+    padding-right:15px;
+    margin-top:4px;
+    color:#A7D46F;
+    font-size:10px;
+}
