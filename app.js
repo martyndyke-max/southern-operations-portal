@@ -1,3 +1,15 @@
+import {
+    db,
+    doc,
+    getDoc,
+    setDoc
+} from "./firebase.js";
+
+console.log("getDoc =", getDoc);
+console.log("setDoc =", setDoc);
+
+console.log("Southern Operations Portal Loaded");
+
 window.onload = async function(){
 
     try{
