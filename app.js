@@ -21,16 +21,24 @@ console.log("Loading roster from Firebase...");
             doc(db,"Schedule","roster")
         );
 
-        if(rosterDoc.exists()){
+if(rosterDoc.exists()){
 
-            console.log(rosterDoc.data());
+    console.log(rosterDoc.data());
 
-            document.getElementById(
-                "scheduleBody"
-            ).innerHTML =
-            rosterDoc.data().tableData;
+    document.getElementById(
+        "scheduleBody"
+    ).innerHTML =
+    rosterDoc.data().tableData;
 
-        }
+    lastUpdated.textContent =
+    "Last Updated By: " +
+    (rosterDoc.data().updatedBy || "System");
+
+    lastUpdatedTime.textContent =
+    "Last Updated: " +
+    (rosterDoc.data().updated || "Never");
+
+}
 
     }
 
@@ -79,6 +87,9 @@ document.getElementById("saveStatus");
 const lastUpdatedTime =
 document.getElementById("lastUpdatedTime");
 
+const lastUpdated =
+document.getElementById("lastUpdated");
+
 saveBtn.addEventListener("click", async () => {
 
     console.log("Save button clicked");
@@ -90,18 +101,22 @@ saveBtn.addEventListener("click", async () => {
 
         console.log("Writing to Firestore...");
         
-        await setDoc(
-            doc(db,"Schedule","roster"),
-            {
-                tableData:
-                document.getElementById(
-                    "scheduleBody"
-                ).innerHTML,
+await setDoc(
+    doc(db,"Schedule","roster"),
+    {
+        tableData:
+        document.getElementById(
+            "scheduleBody"
+        ).innerHTML,
 
-                updated:
-                new Date().toLocaleString()
-            }
-        );
+        updated:
+        new Date().toLocaleString(),
+
+        updatedBy:
+        localStorage.getItem("managerName")
+        || "Unknown"
+    }
+);
 
         console.log("Firestore write complete");
 
@@ -111,6 +126,11 @@ saveBtn.addEventListener("click", async () => {
         lastUpdatedTime.textContent =
         "Last Updated: " +
         new Date().toLocaleString();
+
+        lastUpdated.textContent =
+"Last Updated By: " +
+(localStorage.getItem("managerName")
+|| "Unknown");
 
     }
 
@@ -317,4 +337,33 @@ toggleBackground.addEventListener("click", () => {
 
     }
 
+});
+
+const managerNameInput =
+document.getElementById("managerName");
+
+const saveManagerNameBtn =
+document.getElementById("saveManagerName");
+
+const savedManager =
+localStorage.getItem("managerName");
+
+if(savedManager){
+
+    managerNameInput.value =
+    savedManager;
+
+}
+saveManagerNameBtn.addEventListener("click", () => {
+
+    localStorage.setItem(
+
+        "managerName",
+
+        managerNameInput.value
+
+    );
+
+saveStatus.textContent =
+"Status: Manager Name Saved";
 });
