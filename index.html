@@ -178,7 +178,47 @@
 
         </table>
 
-        <div class="toolbar">
+<div class="paletteToolbar">
+
+    <button id="openPalette">
+        🎨 Row Colour
+    </button>
+
+</div>
+
+<div id="colourPalettePopup">
+
+    <div class="colourGrid">
+
+        <div class="colourCircle" data-colour="#000000"></div>
+        <div class="colourCircle" data-colour="#555555"></div>
+        <div class="colourCircle" data-colour="#999999"></div>
+        <div class="colourCircle" data-colour="#CCCCCC"></div>
+
+        <div class="colourCircle" data-colour="#B8DE7C"></div>
+        <div class="colourCircle" data-colour="#006B3F"></div>
+        <div class="colourCircle" data-colour="#FFD447"></div>
+        <div class="colourCircle" data-colour="#4EA5D9"></div>
+
+        <div class="colourCircle" data-colour="#D9534F"></div>
+        <div class="colourCircle" data-colour="#A45EE5"></div>
+        <div class="colourCircle" data-colour="#FF944D"></div>
+        <div class="colourCircle" data-colour="#FFFFFF"></div>
+
+    </div>
+
+    <div class="colourCircle customColour">
+    +
+</div>
+
+<input
+    type="color"
+    id="customColourPicker"
+    hidden>
+
+</div>
+
+    <div class="toolbar">
         <button id="saveBtn">
             Save Roster
         </button>
