@@ -226,3 +226,108 @@ tbody tr:hover{
     color:#A7D46F;
     font-size:10px;
 }
+
+.selected-row{
+    outline:3px solid #8CC63E;
+}
+
+.paletteToolbar{
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+#openPalette{
+
+    background:#8CC63E;
+
+    color:#022D1E;
+
+    border:none;
+
+    padding:10px 20px;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+#colourPalettePopup{
+
+    display:none;
+
+    width:650px;
+
+    margin:20px auto;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    background:#ffffff;
+
+}
+
+.colourGrid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(6,90px);
+
+    gap:12px;
+
+    justify-content:center;
+
+}
+
+.colourCircle{
+
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    border:2px solid #cccccc;
+
+}
+
+.colourCircle[data-colour="#000000"]{background:#000000;}
+.colourCircle[data-colour="#555555"]{background:#555555;}
+.colourCircle[data-colour="#999999"]{background:#999999;}
+.colourCircle[data-colour="#CCCCCC"]{background:#CCCCCC;}
+
+.colourCircle[data-colour="#B8DE7C"]{background:#B8DE7C;}
+.colourCircle[data-colour="#006B3F"]{background:#006B3F;}
+.colourCircle[data-colour="#FFD447"]{background:#FFD447;}
+.colourCircle[data-colour="#4EA5D9"]{background:#4EA5D9;}
+
+.colourCircle[data-colour="#D9534F"]{background:#D9534F;}
+.colourCircle[data-colour="#A45EE5"]{background:#A45EE5;}
+.colourCircle[data-colour="#FF944D"]{background:#FF944D;}
+.colourCircle[data-colour="#FFFFFF"]{background:#FFFFFF;}
+
+.customColour{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    background:#ffffff;
+
+    color:#444444;
+
+}
