@@ -138,34 +138,17 @@ document.addEventListener("click", (e) => {
     document.querySelectorAll("#scheduleBody tr")
         .forEach(r => r.classList.remove("selected-row"));
 
-    row.classList.add("selected-row");
+row.classList.add("selected-row");
 
-    selectedRow = row;
+selectedRow = row;
+
+colourPalettePopup.style.display =
+"block";
+
 });
-
-const openPalette =
-document.getElementById("openPalette");
 
 const colourPalettePopup =
 document.getElementById("colourPalettePopup");
-
-openPalette.addEventListener("click", () => {
-
-    if(colourPalettePopup.style.display === "block"){
-
-        colourPalettePopup.style.display =
-        "none";
-
-    }
-
-    else{
-
-        colourPalettePopup.style.display =
-        "block";
-
-    }
-
-});
 
 document.querySelectorAll(".colourCircle")
 .forEach(circle => {
@@ -202,3 +185,12 @@ customColourPicker.addEventListener("input", () => {
 
 });
 
+const closePalette =
+document.getElementById("closePalette");
+
+closePalette.addEventListener("click", () => {
+
+    colourPalettePopup.style.display =
+    "none";
+
+});
