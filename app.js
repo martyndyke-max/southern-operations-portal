@@ -194,3 +194,38 @@ closePalette.addEventListener("click", () => {
     "none";
 
 });
+
+
+const rosterBackground =
+document.getElementById("rosterBackground");
+
+const toggleBackground =
+document.getElementById("toggleBackground");
+
+let backgroundVisible = false;
+
+toggleBackground.addEventListener("click", () => {
+
+    backgroundVisible = !backgroundVisible;
+
+    if(backgroundVisible){
+
+        rosterBackground.style.display =
+        "block";
+
+        toggleBackground.textContent =
+        "Hide Background";
+
+    }
+
+    else{
+
+        rosterBackground.style.display =
+        "none";
+
+        toggleBackground.textContent =
+        "Show Background";
+
+    }
+
+});
