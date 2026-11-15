@@ -129,6 +129,23 @@ let selectedRow = null;
 
 document.addEventListener("click", (e) => {
 
+    if(
+        !e.target.closest("tr") &&
+        !e.target.closest("#colourPalettePopup")
+    ){
+
+        document.querySelectorAll("#scheduleBody tr")
+            .forEach(r => r.classList.remove("selected-row"));
+
+        selectedRow = null;
+
+        colourPalettePopup.style.display =
+        "none";
+
+        return;
+
+    }
+
     const row = e.target.closest("tr");
 
     if(!row) return;
@@ -138,12 +155,12 @@ document.addEventListener("click", (e) => {
     document.querySelectorAll("#scheduleBody tr")
         .forEach(r => r.classList.remove("selected-row"));
 
-row.classList.add("selected-row");
+    row.classList.add("selected-row");
 
-selectedRow = row;
+    selectedRow = row;
 
-colourPalettePopup.style.display =
-"block";
+    colourPalettePopup.style.display =
+    "block";
 
 });
 
