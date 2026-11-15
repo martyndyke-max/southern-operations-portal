@@ -233,27 +233,33 @@ tbody tr:hover{
 
 .paletteToolbar{
 
-    text-align:center;
+    position:fixed;
 
-    padding:20px;
+    bottom:25px;
+
+    right:25px;
+
+    z-index:1000;
 
 }
 
 #openPalette{
 
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    border:none;
+
+    cursor:pointer;
+
     background:#8CC63E;
 
     color:#022D1E;
 
-    border:none;
-
-    padding:10px 20px;
-
-    border-radius:8px;
-
-    font-weight:bold;
-
-    cursor:pointer;
+    font-size:28px;
 
 }
 
@@ -261,15 +267,25 @@ tbody tr:hover{
 
     display:none;
 
-    width:650px;
+    position:fixed;
 
-    margin:20px auto;
+    bottom:120px;
 
-    padding:20px;
+    right:25px;
 
-    border-radius:15px;
+    z-index:99999;
+
+    pointer-events:auto;
+
+    width:280px;
+
+    padding:12px;
+
+    border-radius:12px;
 
     background:#ffffff;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.2);
 
 }
 
@@ -278,7 +294,7 @@ tbody tr:hover{
     display:grid;
 
     grid-template-columns:
-    repeat(6,90px);
+    repeat(4,40px);
 
     gap:12px;
 
@@ -288,14 +304,15 @@ tbody tr:hover{
 
 .colourCircle{
 
-    width:50px;
-    height:50px;
+    width:30px;
 
-    border-radius:50%;
+    height:30px;
 
     cursor:pointer;
 
-    border:2px solid #cccccc;
+    position:relative;
+
+    z-index:10000;
 
 }
 
