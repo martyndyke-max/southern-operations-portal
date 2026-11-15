@@ -124,3 +124,81 @@ saveBtn.addEventListener("click", async () => {
     }
 
 });
+
+let selectedRow = null;
+
+document.addEventListener("click", (e) => {
+
+    const row = e.target.closest("tr");
+
+    if(!row) return;
+
+    if(row.parentElement.tagName === "THEAD") return;
+
+    document.querySelectorAll("#scheduleBody tr")
+        .forEach(r => r.classList.remove("selected-row"));
+
+    row.classList.add("selected-row");
+
+    selectedRow = row;
+});
+
+const openPalette =
+document.getElementById("openPalette");
+
+const colourPalettePopup =
+document.getElementById("colourPalettePopup");
+
+openPalette.addEventListener("click", () => {
+
+    if(colourPalettePopup.style.display === "block"){
+
+        colourPalettePopup.style.display =
+        "none";
+
+    }
+
+    else{
+
+        colourPalettePopup.style.display =
+        "block";
+
+    }
+
+});
+
+document.querySelectorAll(".colourCircle")
+.forEach(circle => {
+
+    circle.addEventListener("click", () => {
+
+        if(!selectedRow) return;
+
+        selectedRow.style.backgroundColor =
+        circle.dataset.colour;
+
+    });
+
+});
+
+const customColourButton =
+document.querySelector(".customColour");
+
+const customColourPicker =
+document.getElementById("customColourPicker");
+
+customColourButton.addEventListener("click", () => {
+
+    customColourPicker.click();
+
+});
+
+customColourPicker.addEventListener("input", () => {
+
+    if(!selectedRow) return;
+
+    selectedRow.style.backgroundColor =
+    customColourPicker.value;
+
+});
+
