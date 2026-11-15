@@ -18,7 +18,7 @@ body{
 
     min-height:100vh;
 
-    padding:2px;
+    padding:10px;
 }
 
 .header{
@@ -67,7 +67,7 @@ button{
 
     border-radius:10px;
 
-    margin-bottom:1px;
+    margin-bottom:5px;
 
     overflow:hidden;
 
@@ -274,17 +274,9 @@ tbody tr:hover{
 
     display:none;
 
-    position:fixed;
-
-    bottom:120px;
-
-    right:25px;
-
-    z-index:99999;
-
-    pointer-events:auto;
-
     width:280px;
+
+    margin:10px auto;
 
     padding:12px;
 
@@ -294,8 +286,9 @@ tbody tr:hover{
 
     box-shadow:0 4px 12px rgba(0,0,0,.2);
 
-}
+    text-align:center;
 
+}
 .colourGrid{
 
     display:grid;
@@ -382,5 +375,25 @@ tbody tr:hover{
     pointer-events:none;
 
     z-index:1;
+
+}
+
+.managerControls{
+
+    text-align:center;
+
+    padding:10px;
+
+}
+
+#managerName{
+
+    padding:8px;
+
+    border:none;
+
+    border-radius:6px;
+
+    margin-right:10px;
 
 }
