@@ -18,7 +18,7 @@ body{
 
     min-height:100vh;
 
-    padding:10px;
+    padding:2px;
 }
 
 .header{
@@ -67,7 +67,7 @@ button{
 
     border-radius:10px;
 
-    margin-bottom:5px;
+    margin-bottom:1px;
 
     overflow:hidden;
 
