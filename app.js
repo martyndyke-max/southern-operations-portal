@@ -157,8 +157,68 @@ document.querySelectorAll(".colourCircle")
 
         if(!selectedRow) return;
 
-        selectedRow.style.backgroundColor =
+        const colour =
         circle.dataset.colour;
+
+        if(colour === "#000000"){
+            selectedRow.style.backgroundColor =
+            "rgba(0,0,0,0.15)";
+        }
+
+        else if(colour === "#555555"){
+            selectedRow.style.backgroundColor =
+            "rgba(85,85,85,0.15)";
+        }
+
+        else if(colour === "#999999"){
+            selectedRow.style.backgroundColor =
+            "rgba(153,153,153,0.15)";
+        }
+
+        else if(colour === "#CCCCCC"){
+            selectedRow.style.backgroundColor =
+            "rgba(204,204,204,0.15)";
+        }
+
+        else if(colour === "#B8DE7C"){
+            selectedRow.style.backgroundColor =
+            "rgba(184,222,124,0.15)";
+        }
+
+        else if(colour === "#006B3F"){
+            selectedRow.style.backgroundColor =
+            "rgba(0,107,63,0.15)";
+        }
+
+        else if(colour === "#FFD447"){
+            selectedRow.style.backgroundColor =
+            "rgba(255,212,71,0.15)";
+        }
+
+        else if(colour === "#4EA5D9"){
+            selectedRow.style.backgroundColor =
+            "rgba(78,165,217,0.15)";
+        }
+
+        else if(colour === "#D9534F"){
+            selectedRow.style.backgroundColor =
+            "rgba(217,83,79,0.15)";
+        }
+
+        else if(colour === "#A45EE5"){
+            selectedRow.style.backgroundColor =
+            "rgba(164,94,229,0.15)";
+        }
+
+        else if(colour === "#FF944D"){
+            selectedRow.style.backgroundColor =
+            "rgba(255,148,77,0.15)";
+        }
+
+        else if(colour === "#194f38"){
+            selectedRow.style.backgroundColor =
+            "rgba(25, 79, 56, 0.15)";
+        }
 
     });
 
@@ -180,8 +240,20 @@ customColourPicker.addEventListener("input", () => {
 
     if(!selectedRow) return;
 
-    selectedRow.style.backgroundColor =
+    const hex =
     customColourPicker.value;
+
+    const r =
+    parseInt(hex.substring(1,3),16);
+
+    const g =
+    parseInt(hex.substring(3,5),16);
+
+    const b =
+    parseInt(hex.substring(5,7),16);
+
+    selectedRow.style.backgroundColor =
+    `rgba(${r},${g},${b},0.15)`;
 
 });
 
