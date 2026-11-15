@@ -18,7 +18,7 @@ body{
 
     min-height:100vh;
 
-    padding:30px;
+    padding:10px;
 }
 
 .header{
@@ -63,11 +63,11 @@ button{
 }
 
 .banner{
-    height:220px;
+    height: 200px;
 
-    border-radius:20px;
+    border-radius:10px;
 
-    margin-bottom:25px;
+    margin-bottom:5px;
 
     overflow:hidden;
 
@@ -144,7 +144,7 @@ table{
 th{
     color:#A7D46F;
     text-align:center;
-    padding:16px;
+    padding:6px;
 }
 
 th{
@@ -153,7 +153,7 @@ th{
 }
 
 td{
-    padding:16px;
+    padding:8px;
     text-align:center;
     vertical-align:middle;
     border-top:1px solid rgba(255,255,255,.15);
