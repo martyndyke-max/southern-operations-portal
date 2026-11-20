@@ -191,9 +191,25 @@ tr:hover{
 }
 
 footer{
-    text-align:center;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
     margin-top:20px;
+
     opacity:.7;
+
+    padding:0 15px;
+
+}
+
+#toggleControls{
+
+    margin:0;
+
 }
 
 tbody tr:nth-child(even){
