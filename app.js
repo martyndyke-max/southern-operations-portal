@@ -53,6 +53,9 @@ document.getElementById("toggleBackground");
 const toggleRows =
 document.getElementById("toggleRows");
 
+const toggleControls =
+document.getElementById("toggleControls");
+
 let rowsHidden = false;
 
 window.onload = async function(){
@@ -495,5 +498,36 @@ toggleRows.textContent =
 rowsHidden
     ? "Show All Rows"
     : "Hide Unassigned Duties";
+
+});
+
+let controlsHidden = false;
+
+toggleControls.addEventListener("click", () => {
+
+    const toolbar =
+    document.querySelector(".toolbar");
+
+    if(controlsHidden){
+
+        toolbar.style.display =
+        "flex";
+
+        toggleControls.textContent =
+        "⚙ Controls";
+
+    }
+
+    else{
+
+        toolbar.style.display =
+        "none";
+
+        toggleControls.textContent =
+        "⚙ Show Controls";
+
+    }
+
+    controlsHidden = !controlsHidden;
 
 });
