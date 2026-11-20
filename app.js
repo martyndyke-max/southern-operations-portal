@@ -10,6 +10,29 @@ console.log("setDoc =", setDoc);
 
 console.log("Southern Operations Portal Loaded");
 
+const saveBtn =
+document.getElementById("saveBtn");
+
+const saveStatus =
+document.getElementById("saveStatus");
+
+const lastUpdatedTime =
+document.getElementById("lastUpdatedTime");
+
+const lastUpdated =
+document.getElementById("lastUpdated");
+
+const rosterBackground =
+document.getElementById("rosterBackground");
+
+
+const overlaySelector =
+document.getElementById("overlaySelector");
+
+
+const toggleBackground =
+document.getElementById("toggleBackground");
+
 window.onload = async function(){
 
     try{
@@ -88,17 +111,6 @@ function saveTable(){
 
 }
 
-const saveBtn =
-document.getElementById("saveBtn");
-
-const saveStatus =
-document.getElementById("saveStatus");
-
-const lastUpdatedTime =
-document.getElementById("lastUpdatedTime");
-
-const lastUpdated =
-document.getElementById("lastUpdated");
 
 saveBtn.addEventListener("click", async () => {
 
@@ -315,18 +327,6 @@ closePalette.addEventListener("click", () => {
     "none";
 
 });
-
-
-const rosterBackground =
-document.getElementById("rosterBackground");
-
-
-const overlaySelector =
-document.getElementById("overlaySelector");
-
-
-const toggleBackground =
-document.getElementById("toggleBackground");
 
 let backgroundVisible = false;
 
