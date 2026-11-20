@@ -13,6 +13,9 @@ console.log("Southern Operations Portal Loaded");
 const saveBtn =
 document.getElementById("saveBtn");
 
+const clearAssignments =
+document.getElementById("clearAssignments");
+
 const saveStatus =
 document.getElementById("saveStatus");
 
@@ -531,3 +534,25 @@ toggleControls.addEventListener("click", () => {
     controlsHidden = !controlsHidden;
 
 });
+
+clearAssignments.addEventListener("click", () => {
+
+const rows =
+    document.querySelectorAll(
+        "#scheduleBody tr"
+    );
+
+    rows.forEach(row => {
+
+        row.cells[0].innerHTML = "";
+
+        row.cells[4].innerHTML = "";
+
+        row.cells[5].innerHTML = "";
+
+    });
+
+});
+
+saveStatus.textContent =
+"Status: Assignments Cleared";
