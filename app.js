@@ -308,6 +308,11 @@ closePalette.addEventListener("click", () => {
 const rosterBackground =
 document.getElementById("rosterBackground");
 
+
+const overlaySelector =
+document.getElementById("overlaySelector");
+
+
 const toggleBackground =
 document.getElementById("toggleBackground");
 
@@ -366,4 +371,11 @@ saveManagerNameBtn.addEventListener("click", () => {
 
 saveStatus.textContent =
 "Status: Manager Name Saved";
+});
+
+overlaySelector.addEventListener("change", () => {
+
+    rosterBackground.style.backgroundImage =
+    `url("images/${overlaySelector.value}")`;
+
 });
