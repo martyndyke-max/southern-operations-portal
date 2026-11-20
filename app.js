@@ -30,6 +30,16 @@ if(rosterDoc.exists()){
     ).innerHTML =
     rosterDoc.data().tableData;
 
+    if(rosterDoc.data().overlay){
+
+    overlaySelector.value =
+    rosterDoc.data().overlay;
+
+    rosterBackground.style.backgroundImage =
+    `url("images/${rosterDoc.data().overlay}")`;
+
+}
+
     lastUpdated.textContent =
     "Last Updated By: " +
     (rosterDoc.data().updatedBy || "System");
@@ -114,10 +124,12 @@ await setDoc(
 
         updatedBy:
         localStorage.getItem("managerName")
-        || "Unknown"
+        || "Unknown",
+
+        overlay:
+        overlaySelector.value
     }
 );
-
         console.log("Firestore write complete");
 
         saveStatus.textContent =
