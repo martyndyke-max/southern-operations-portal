@@ -53,13 +53,21 @@ if(rosterDoc.exists()){
     ).innerHTML =
     rosterDoc.data().tableData;
 
-    if(rosterDoc.data().overlay){
+if(rosterDoc.data().overlay){
 
     overlaySelector.value =
     rosterDoc.data().overlay;
 
     rosterBackground.style.backgroundImage =
     `url("images/${rosterDoc.data().overlay}")`;
+
+    rosterBackground.style.display =
+    "block";
+
+    backgroundVisible = true;
+
+    toggleBackground.textContent =
+    "Hide Background";
 
 }
 
