@@ -228,14 +228,38 @@
 
 </div>
 
-    <div class="toolbar">
-        <button id="toggleBackground">
-    Show Background
-</button>
-        <button id="saveBtn">
-            Save Roster
-        </button>
-    </div>
+<div class="toolbar">
+
+    <select id="overlaySelector">
+
+        <option value="southern-roster-overlay.png">
+            Southern Standard
+        </option>
+
+        <option value="southern-fairholt.png">
+            Fairholt
+        </option>
+
+    </select>
+
+    <input
+        type="text"
+        id="managerName"
+        placeholder="Enter Manager Name">
+
+    <button id="saveManagerName">
+        Save Name
+    </button>
+
+    <button id="toggleBackground">
+        Show Background
+    </button>
+
+    <button id="saveBtn">
+        Save Roster
+    </button>
+
+</div>
 
     <div id="saveStatus">
         Status: Ready
