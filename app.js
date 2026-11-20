@@ -25,13 +25,35 @@ document.getElementById("lastUpdated");
 const rosterBackground =
 document.getElementById("rosterBackground");
 
-
 const overlaySelector =
 document.getElementById("overlaySelector");
+
+const moveLeft =
+document.getElementById("moveLeft");
+
+const moveRight =
+document.getElementById("moveRight");
+
+const moveUp =
+document.getElementById("moveUp");
+
+const moveDown =
+document.getElementById("moveDown");
+
+const resetOverlay =
+document.getElementById("resetOverlay");
+
+let overlayX = 50;
+let overlayY = 50;
 
 
 const toggleBackground =
 document.getElementById("toggleBackground");
+
+const toggleRows =
+document.getElementById("toggleRows");
+
+let rowsHidden = false;
 
 window.onload = async function(){
 
@@ -397,5 +419,81 @@ overlaySelector.addEventListener("change", () => {
 
     rosterBackground.style.backgroundImage =
     `url("images/${overlaySelector.value}")`;
+
+});
+
+moveLeft.addEventListener("click", () => {
+
+    overlayX -= 5;
+
+    rosterBackground.style.backgroundPosition =
+    `${overlayX}% ${overlayY}%`;
+
+});
+
+moveRight.addEventListener("click", () => {
+
+    overlayX += 5;
+
+    rosterBackground.style.backgroundPosition =
+    `${overlayX}% ${overlayY}%`;
+
+});
+
+moveUp.addEventListener("click", () => {
+
+    overlayY -= 5;
+
+    rosterBackground.style.backgroundPosition =
+    `${overlayX}% ${overlayY}%`;
+
+});
+
+moveDown.addEventListener("click", () => {
+
+    overlayY += 5;
+
+    rosterBackground.style.backgroundPosition =
+    `${overlayX}% ${overlayY}%`;
+    
+
+});
+
+resetOverlay.addEventListener("click", () => {
+
+    overlayX = 50;
+    overlayY = 50;
+
+    rosterBackground.style.backgroundPosition =
+    `${overlayX}% ${overlayY}%`;
+
+});
+
+toggleRows.addEventListener("click", () => {
+
+    const rows =
+    document.querySelectorAll("#scheduleBody tr");
+
+    rows.forEach(row => {
+
+        const driverName =
+row.cells[0].textContent.trim();
+
+        if(driverName === ""){
+
+
+            row.style.display =
+            rowsHidden ? "" : "none";
+
+        }
+
+    });
+
+    rowsHidden = !rowsHidden;
+
+toggleRows.textContent =
+rowsHidden
+    ? "Show All Rows"
+    : "Hide Unassigned Duties";
 
 });
